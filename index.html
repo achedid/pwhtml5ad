@@ -11,8 +11,6 @@
       margin: 0;
       padding: 0;
       background-color: #010104;
-      width: 100%;
-      max-width: 375px;
     }
 
     #lottieContainer{
@@ -22,18 +20,21 @@
       top: 0;
       left: 0;
     }
-    canvas{
+    #game-container{
       width: 100%;
       height: 100%;
-      max-width: 100%;
+      max-width: 375px;
+      max-height: 868px;
       margin: 0 auto;
       position: relative;
-      display: inherit;
+      overflow: hidden;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div id="lottieContainer"></div>
+  <div id="game-container"></div>
   <div style="font-family:'Signika'; position:absolute; left:-1000px; visibility:hidden;">.</div>
   <script src="assets/js/lottie_svg.min.js"></script>
   <script src="assets/js/phaser.min.js"></script>

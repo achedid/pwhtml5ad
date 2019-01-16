@@ -19,7 +19,7 @@ class LandingScene extends Phaser.Scene{
 
       this.input.manager.enabled = true;
 
-      this.container = this.add.container(window.screen.availWidth/2, window.screen.availHeight/2);
+      this.container = this.add.container(parent.clientWidth/2, window.screen.availHeight/2);
 
       var nowD = new Date();
       this.endTime = nowD;

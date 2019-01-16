@@ -311,10 +311,9 @@ class QuestionScene extends Phaser.Scene{
         else if(correct){
           title = 'CORRECT ANSWER'
           color = 'green';
-          points = 100;
+          points = 100*this.correctQuestions;
           rank = '2';
-          nextPoints = 200;
-
+          nextPoints = points + 100;
         }
 
         this.answerPopupTimer = this.add.graphics();
@@ -336,10 +335,10 @@ class QuestionScene extends Phaser.Scene{
         this.graphics.fillRectShape(rect);
         this.graphics.strokeRectShape(rect);
 
-        this.titleText = this.add.text(-65, -120, title, {fontSize: 20, color: color, fontFamily: 'Signika'})
-        this.pointsText = this.add.text(-110, -20, points + ' pts', {fontSize: 22, color: "#f7c903", fontFamily: 'Signika'})
+        this.titleText = this.add.text(-70, -120, title, {fontSize: 20, color: color, fontFamily: 'Signika'})
+        this.pointsText = this.add.text(-105, -20, points + ' pts', {fontSize: 22, color: "#f7c903", fontFamily: 'Signika'})
         this.rankText = this.add.text(-5, -20, rank, {fontSize: 25, color: "#f7c903", fontFamily: 'Signika'})
-        this.nextPointsText = this.add.text(50, -20, nextPoints + ' pts', {fontSize: 22, color:  "#f7c903", fontFamily: 'Signika'})
+        this.nextPointsText = this.add.text(45, -20, nextPoints + ' pts', {fontSize: 22, color:  "#f7c903", fontFamily: 'Signika'})
 
         this.answer_popup_stats = this.add.image(0, -15, 'answer_popup_stats');
         this.small_play = this.add.image(0, 90, 'small_play');
@@ -393,7 +392,7 @@ class QuestionScene extends Phaser.Scene{
 
       this.resultIsDisplayed = false;
 
-      this.container = this.add.container(window.screen.availWidth/2, window.screen.availHeight/2);
+      this.container = this.add.container(parent.clientWidth/2, window.screen.availHeight/2);
 
       this.q_effect = this.add.image(117, -230, 'q_effect');
       this.question_nb = this.add.text(-55, -263, '1', {fontSize: 20, stroke: 'black', strokeThickness: 2, fontFamily: 'Signika'});
@@ -441,6 +440,7 @@ class QuestionScene extends Phaser.Scene{
         // Output the result in an element with id="demo"
         var newContent = (seconds < 10 ? " " + seconds : seconds);
         if(seconds < 0){
+          this.user_answered = true
           newContent = " 0";
 
           this.displayAnswerPopup(-1);

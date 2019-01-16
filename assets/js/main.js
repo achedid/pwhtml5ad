@@ -1,7 +1,9 @@
+var parent = document.getElementById('game-container');
 var config = {
     type: Phaser.AUTO,
-    width: window.screen.availWidth,
+    width: parent.clientWidth,
     height: window.screen.availHeight,
+    parent: 'game-container',
     scene:[
       LandingScene, QuestionScene
     ]
