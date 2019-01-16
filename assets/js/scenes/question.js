@@ -212,7 +212,7 @@ class QuestionScene extends Phaser.Scene{
                   if(e.correct){
                     that.correctQuestions += 1;
                     answerImage = that.add.image(oldX, oldY, 'answer2x2g');
-                    var correctPoints = that.add.text(oldX - 16, oldY, '+100', {fontSize: 20, fontFamily: 'Signika', stroke: 'black', strokeThickness: 2});
+                    var correctPoints = that.add.text(oldX - 20, oldY, '+100', {fontSize: 20, fontFamily: 'Signika', stroke: 'black', strokeThickness: 2});
 
                   }
                   else{
@@ -335,10 +335,10 @@ class QuestionScene extends Phaser.Scene{
         this.graphics.fillRectShape(rect);
         this.graphics.strokeRectShape(rect);
 
-        this.titleText = this.add.text(-70, -120, title, {fontSize: 20, color: color, fontFamily: 'Signika'})
-        this.pointsText = this.add.text(-105, -20, points + ' pts', {fontSize: 22, color: "#f7c903", fontFamily: 'Signika'})
+        this.titleText = this.add.text(-75, -120, title, {fontSize: 20, color: color, fontFamily: 'Signika'})
+        this.pointsText = this.add.text(-105, -20, points + ' pts', {fontSize: 18, color: "#f7c903", fontFamily: 'Signika'})
         this.rankText = this.add.text(-5, -20, rank, {fontSize: 25, color: "#f7c903", fontFamily: 'Signika'})
-        this.nextPointsText = this.add.text(45, -20, nextPoints + ' pts', {fontSize: 22, color:  "#f7c903", fontFamily: 'Signika'})
+        this.nextPointsText = this.add.text(50, -20, nextPoints + ' pts', {fontSize: 18, color:  "#f7c903", fontFamily: 'Signika'})
 
         this.answer_popup_stats = this.add.image(0, -15, 'answer_popup_stats');
         this.small_play = this.add.image(0, 90, 'small_play');
