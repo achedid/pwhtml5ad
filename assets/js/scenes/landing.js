@@ -39,7 +39,7 @@ class LandingScene extends Phaser.Scene{
       this.timer_placeholder = this.add.text(50, 70, '00:00:00', {fontSize: 20, stroke: 'black', strokeThickness: 2, fontFamily: 'Signika', letterSpacing: '2px'});
 
       this.play_bg = this.add.image(0, 250, 'play_bg');
-      this.playText = this.add.text(-50, 230, "PLAY", {fill: 'white', fontSize: 25, color: 'white', stroke: 'black', strokeThickness: 2, fontFamily: 'Signika'});
+      this.playText = this.add.text(-40, 230, "PLAY", {fill: 'white', fontSize: 25, color: 'white', stroke: 'black', strokeThickness: 2, fontFamily: 'Signika'});
       this.play_bg.setInteractive().on('pointerdown', function (event){
 
 

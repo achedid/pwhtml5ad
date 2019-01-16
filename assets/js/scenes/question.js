@@ -81,7 +81,7 @@ class QuestionScene extends Phaser.Scene{
           }
 
           this.downloadAppButton = this.add.image(0, 150, 'yellow_button');
-          this.download_text = this.add.text(-80, 138, 'Download Free Now!', {fontSize: 20, fontFamily: 'Signika', color: 'white'});
+          this.download_text = this.add.text(-85, 138, 'Download Free Now!', {fontSize: 20, fontFamily: 'Signika', color: 'white'});
           this.downloadAppButton.alpha = 0;
           this.download_text.alpha = 0;
 
@@ -97,7 +97,7 @@ class QuestionScene extends Phaser.Scene{
           this.reloadAppButton.setInteractive().on('pointerdown', function (event){
             that.scene.transition({
               target: 'LANDING',
-              duration: 1000,
+              duration: 0,
               moveAbove: true,
               onUpdate: that.transitionOut,
             });
