@@ -1,8 +1,10 @@
 var parent = document.getElementById('game-container');
+var canvasWidth = parent.clientWidth
+var canvasHeight = Math.min(window.screen.availHeight, 812);
 var config = {
     type: Phaser.AUTO,
-    width: parent.clientWidth,
-    height: window.screen.availHeight,
+    width: canvasWidth,
+    height: canvasHeight,
     parent: 'game-container',
     scene:[
       LandingScene, QuestionScene

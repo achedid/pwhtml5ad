@@ -392,7 +392,7 @@ class QuestionScene extends Phaser.Scene{
 
       this.resultIsDisplayed = false;
 
-      this.container = this.add.container(parent.clientWidth/2, window.screen.availHeight/2);
+      this.container = this.add.container(canvasWidth/2, canvasHeight/2);
 
       this.q_effect = this.add.image(117, -230, 'q_effect');
       this.question_nb = this.add.text(-55, -263, '1', {fontSize: 20, stroke: 'black', strokeThickness: 2, fontFamily: 'Signika'});
