@@ -13,14 +13,18 @@ var config = {
 
 var game = new Phaser.Game(config);
 
+
 var Sticker = {
-    stickers: ['great_job', 'wow_three'],
+    stickers: ['great_job', 'wow_three', 'keep_it_up'],
     show: function (callBackFn){
 
-      var item = this.stickers[Math.floor(Math.random()*this.stickers.length)];
+      var item = Sticker.stickers[Math.floor(Math.random()*Sticker.stickers.length)];
+      Sticker.stickers.pop(item);
+      console.log(Sticker.stickers);
       var lottitContainer = document.getElementById('lottieContainer');
       lottitContainer.innerHTML = '';
       lottieContainer.style.zIndex = "10";
+
       var stickerAnimation = lottie.loadAnimation({
         container: lottitContainer, // the dom element that will contain the animation
         renderer: 'svg',

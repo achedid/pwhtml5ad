@@ -72,7 +72,6 @@ class QuestionScene extends Phaser.Scene{
           if(this.correctQuestions == this.max_questions){
             this.congrats = this.add.image(0, 0, 'congrats');
             this.container.add([this.congrats]);
-            var winners_sound = this.sound.add('winners_sound');
 
           }else{
             this.hard_luck = this.add.image(0, 0, 'hard_luck');
@@ -80,28 +79,24 @@ class QuestionScene extends Phaser.Scene{
 
           }
 
-          this.downloadAppButton = this.add.image(0, 150, 'yellow_button');
-          this.download_text = this.add.text(-85, 138, 'Download Free Now!', {fontSize: 20, fontFamily: 'Signika', color: 'white'});
+          this.downloadAppButton = this.add.image(0, 200, 'yellow_button');
+          this.download_text = this.add.text(-70, 188, 'Download Now!', {fontSize: 20, fontFamily: 'Signika', color: 'white'});
           this.downloadAppButton.alpha = 0;
           this.download_text.alpha = 0;
 
-          this.reloadAppButton = this.add.image(0, 240, 'yellow_button');
-          this.play_text = this.add.text(-50, 228, 'Play Again!!', {fontSize: 20, fontFamily: 'Signika', color: 'white'});
-          this.reloadAppButton.alpha = 0;
-          this.play_text.alpha = 0;
           var that = this;
 
           this.downloadAppButton.setInteractive().on('pointerdown', function (event){
               window.open('https://playandwinapp.page.link/uno3',  "_blank");
           });
-          this.reloadAppButton.setInteractive().on('pointerdown', function (event){
+          /*this.reloadAppButton.setInteractive().on('pointerdown', function (event){
             that.scene.transition({
               target: 'LANDING',
               duration: 0,
               moveAbove: true,
               onUpdate: that.transitionOut,
             });
-          });
+          });*/
 
           this.tweens.timeline({
                 ease: 'Power2',
@@ -114,21 +109,14 @@ class QuestionScene extends Phaser.Scene{
                     repeat: -1
                   },
                   {
-                    targets: [this.download_text, this.downloadAppButton, this.play_text],
+                    targets: [this.download_text, this.downloadAppButton],
                     alpha: 1,
                     offset: 0
                   },
-                  {
-                    targets: [this.reloadAppButton],
-                    alpha: 1,
-                    offset: 500,
-                    scaleX: { value: 1.2, duration: 500, yoyo: true, ease: 'Quad.easeInOut' },
-                    scaleY: { value: 1.2, duration: 500, yoyo: true, ease: 'Quad.easeInOut' },
-                  }
                 ]
           });
 
-          this.container.add([this.downloadAppButton, this.reloadAppButton, this.download_text, this.play_text]);
+          this.container.add([this.downloadAppButton, this.download_text]);
       }
     }
 

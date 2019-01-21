@@ -13,6 +13,7 @@ class LandingScene extends Phaser.Scene{
       this.load.image('app_landing', 'assets/images/app_landing_338X600.jpg');
       this.load.image('play_bg', 'assets/images/play_bg.png');
 
+      this.load.image('left_pointer', 'assets/images/pointer-left.png');
     }
     create(){
       var that = this;
@@ -28,6 +29,10 @@ class LandingScene extends Phaser.Scene{
       this.app_landing = this.add.image(0, 0, 'app_landing');
       this.app_landing.width = window.screen.availWidth;
       this.app_landing.height = window.screen.availHeight;
+
+      this.left_pointer = this.add.image(-140, 240, 'left_pointer');
+      this.left_pointer_text = this.add.text(-160, 260, 'Start here', {fontSize: 11, stroke: 'black', strokeThickness: 2, fontFamily: 'Signika'});
+      this.left_pointer_text.setWordWrapWidth(50, false);
 
       this.app_logo = this.add.image(0, -245, 'app_logo');
       this.app_logo_effect = this.add.sprite(0, -250, 'app_logo_effect');
@@ -61,11 +66,38 @@ class LandingScene extends Phaser.Scene{
             scaleX: { value: 1.1, duration: 1000, yoyo: true, ease: 'Quad.easeInOut' },
             scaleY: { value: 1.1, duration: 1000, yoyo: true, ease: 'Quad.easeInOut' },
             repeat: -1
+          },
+        ]
+      });
+      this.tweens.timeline({
+        ease: 'Power2',
+        duration: 1500,
+        tweens: [
+          {
+            targets: [that.left_pointer],
+            x: -130,
+            duration: 500,
+            ease: 'Sine.easeInOut',
+            yoyo: true,
+            repeat: -1
           }
         ]
       });
+      this.tweens.timeline({
+        ease: 'Power2',
+        duration: 1500,
+        tweens: [
+        {
+          targets: [that.left_pointer_text],
+          alpha: 0.2,
+          duration: 500,
+          yoyo: true,
+          ease: 'Sine.easeInOut',
+          repeat: -1
+        }
+      ]});
 
-      this.container.add([this.app_landing, this.app_logo, this.app_logo_effect, this.game_text, this.game_prize, this.timer_text, this.timer_placeholder, this.play_bg, this.playText])
+      this.container.add([this.app_landing, this.app_logo, this.app_logo_effect, this.game_text, this.game_prize, this.timer_text, this.timer_placeholder, this.play_bg, this.playText,  this.left_pointer, this.left_pointer_text])
 
       this.addTips();
     }
