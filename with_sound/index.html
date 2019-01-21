@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="ad.size" content="width=338,height=600">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.3/lottie_canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.3/lottie_html.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.3/lottie_svg.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.15.1/phaser.min.js"></script>
+  <style>
+  @font-face {
+    font-family: 'HauracherellNC';
+    src:  url("assets/fonts/HauracherellNC.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #010104;
+  }
+
+  #lottieContainer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  #game-container{
+    width: 100%;
+    height: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+  }
+  </style>
+</head>
+<body>
+  <div id="lottieContainer"></div>
+  <div id="game-container"></div>
+  <div style="font-family:HauracherellNC; position:absolute; left:-1000px; visibility:hidden;">.</div>
+  <script src="assets/js/scenes/landing.js"></script>
+  <script src="assets/js/scenes/question.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
